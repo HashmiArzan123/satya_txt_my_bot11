@@ -23,14 +23,14 @@ import re
 import os
 
 bot = Client("bot",
-             bot_token= "6334241757:AAHo1iSa_LcjP6jbbEO-Wz1H8wp9Oj9tZSk",
+             bot_token= "6446968748:AAFjKdU2XrFSfEsFrNQ-R8iyTja9Q2ZR97g",
              api_id= 22439323,
              api_hash= "e0e203c8be2c2c58b04d0c59fc82f507")
 
 
 @bot.on_message(filters.command(["start"]) & filters.user(ADMINS))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"**Hello** [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nPress /satyam")
+    editable = await m.reply_text(f"**Hello** [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nPress /TIGER")
 
 
 @bot.on_message(filters.command("stop") & filters.user(ADMINS))
@@ -39,7 +39,7 @@ async def restart_handler(_, m):
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command(["satyam"]) & filters.user(ADMINS))
+@bot.on_message(filters.command(["TIGER"]) & filters.user(ADMINS))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(f"**Hey [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nSend txt file**")
     input: Message = await bot.listen(editable.chat.id)
@@ -169,8 +169,8 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:                               
-                cc = f'**[📽️] Vid_ID:** {str(count).zfill(3)}. {name1} ({res}) .mp4\n\n**Batch Name ➤** {b_name}\n\n**Extracted By ➤ {CR}**\n**@neetumamvol1**'
-                cc1 = f'**[🗒️] Pdf_ID:** {str(count).zfill(3)}. {name1} .pdf \n\n**Batch Name ➤**{b_name}\n\n**Extracted By ➤ {CR}**\n**@neetumamvol1**'
+                cc = f'**[📽️] Vid_ID:** {str(count).zfill(3)}. {name1} ({res}) .mp4\n\n**Batch Name ➤** {b_name}\n\n**Extracted By ➤ {CR}**\n**JUGNU**'
+                cc1 = f'**[🗒️] Pdf_ID:** {str(count).zfill(3)}. {name1} .pdf \n\n**Batch Name ➤**{b_name}\n\n**Extracted By ➤ {CR}**\n**JUGNU**'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -197,7 +197,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    prog = await m.reply_text(f"**Downloading:-**\n\n** Video Name :-** `{name}\nQuality - {raw_text2}`\n**link:**`{url}`\n\n **Bot Made By** ⭐**MR.SATYAM**⭐")
+                    prog = await m.reply_text(f"**Downloading:-**\n\n** Video Name :-** `{name}\nQuality - {raw_text2}`\n**link:**`{url}`\n\n **Bot Made By** ⭐**TIGER**⭐")
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
